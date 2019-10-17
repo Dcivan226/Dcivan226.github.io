@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>Hexo命令 | 倾周梦柳</title>
-  <meta name="keywords" content>
-  <meta name="description" content="Hexo命令 | 倾周梦柳">
+  <title>Python | 倾周梦柳</title>
+  <meta name="keywords" content=" Python ">
+  <meta name="description" content="Python | 倾周梦柳">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="人生只要两次相遇便好 一次遇见你 一次走到底  关于倾周梦柳 是Dcivan的个人站。到目前为止已经写了篇文章 平台支持通过 Hexo 生成，部署在 GitHub Pages，主题 3-hexo 已经在github上开源">
 <meta property="og:type" content="website">
@@ -246,19 +246,31 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-Hexo命令" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-Python相关库" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Hexo命令</h1>
+        <h1 class="article-title">Python</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            
+                <a href="javascript:" data-rel="Python">Python</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color2">Python</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-16 17:30:16'>2019-10-16 17:30</time>
+        创建时间:<time class="date" title='更新时间: 2019-10-17 11:39:16'>2019-10-16 17:36</time>
         
     </div>
     <div class="article-meta">
@@ -280,7 +292,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装Git"><span class="toc-text">安装Git</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装Node-js"><span class="toc-text">安装Node.js.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装Hexo"><span class="toc-text">安装Hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#初始化Hexo"><span class="toc-text">初始化Hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server-1"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows下python库的常用安装方法"><span class="toc-text">Windows下python库的常用安装方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#python2-7-16"><span class="toc-text">python2.7.16</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pip"><span class="toc-text">pip</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pytesseract"><span class="toc-text">Pytesseract</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -295,43 +307,32 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Hexo是一个快速，简单和强大的博客框架。您使用<a href="http://daringfireball.net/projects/markdown/" target="_blank" rel="noopener">Markdown</a>（或其他语言）撰写帖子，Hexo会在几秒钟内生成具有漂亮主题的静态文件。</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>安装Hexo非常简单。您需要先安装其他几个东西：</p>
+        <h3 id="Windows下python库的常用安装方法"><a href="#Windows下python库的常用安装方法" class="headerlink" title="Windows下python库的常用安装方法"></a>Windows下python库的常用安装方法</h3><p>几种常用的安装方法:</p>
 <ul>
-<li>Node.js (Should be at least nodejs 6.9)</li>
-<li>Git.<h3 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h3></li>
-<li>Windows：下载并安装git。</li>
-<li>Mac：使用Homebrew，MacPorts或安装程序安装它。</li>
-<li>Linux（Ubuntu，Debian）： sudo apt-get install git-core</li>
+<li>pip安装（需要pip）<pre><code class="bash">  pip install xxx</code></pre>
+</li>
+<li>通过下载whl文件安装(需要pip)<br>```bash</li>
 </ul>
-<h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js."></a>安装Node.js.</h3><ul>
-<li>使用Node Version Manager。</li>
-</ul>
-<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><p>使用用npm安装Hexo：</p>
-<pre><code class="bash">$ npm install -g hexo</code></pre>
-<h3 id="初始化Hexo"><a href="#初始化Hexo" class="headerlink" title="初始化Hexo"></a>初始化Hexo</h3><p>安装Hexo后，运行以下命令以初始化目标中的Hexo <folder></folder></p>
-<pre><code class="bash">$ hexo init &lt;folder&gt; 
-$ cd &lt;folder&gt; 
-$ npm install</code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server</code></pre>
-<p>初始化后，这是项目文件夹的样子：</p>
-<pre><code class="bash">├──_config.yml 
-├──的package.json 
-├──支架
-├──源
-| ├──_drafts 
-| └──_posts 
-└──主题</code></pre>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;</code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server-1"><a href="#Run-server-1" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server</code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate</code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy</code></pre>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<p>1.下载相应库的whl文件，网址Python Extension Packages。注意要下载相应版本的，还有32还是64位系统。<br>2.cmd上输入pip install .whl文件名即可。  要完整的文件</p>
+<pre><code>- 在pythn官网下载安装包安装（不需要pip）
+```bash
+1.下载
+2.解压 
+3.在命令提示符窗口中，使用cd进入到解压后的文件的路径下 
+4.输入命令python setup.py install 
+ 常用的两个下载包和模块安装文件的网站：PyPI-the Python Package Index和Python Extension Packages。 </code></pre><p>tkinter是python 默认库无需安装，导入失败是包的名称写错了，可能叫Tkinter,或者tkinter多试一试。</p>
+<h3 id="python2-7-16"><a href="#python2-7-16" class="headerlink" title="python2.7.16"></a>python2.7.16</h3><p>[python2下载地址](<a href="https://www.python.org/downloads/windows/）" target="_blank" rel="noopener">https://www.python.org/downloads/windows/）</a></p>
+<h3 id="pip"><a href="#pip" class="headerlink" title="pip"></a>pip</h3><p>[pip 下载地址](<a href="https://pypi.org/project/pip/）" target="_blank" rel="noopener">https://pypi.org/project/pip/）</a></p>
+<h3 id="Pytesseract"><a href="#Pytesseract" class="headerlink" title="Pytesseract"></a>Pytesseract</h3><p>pytesseract是google做的ocr库，可以识别图片中的文字，一般用在爬虫登录时验证码的识别。<br>安装方法:<br>​``` bash<br>    pip install pytesseract </p>
+<pre><code>1.windows上要安装tesseract-ocr-setup-4.00.00dev.exe程序，然后设置环境变量 
 
+### pyHook
+PyHook是一个基于Python的“钩子”库，主要用于监听当前电脑上鼠标和键盘的事件。这个库依赖于另一个Python库PyWin32，PyWin32只能运行在Windows平台，所以PyHook也只能运行在Windows平台。
+通过安装包进行安装了：
+首先安装pythoncom
+[pythoncom下载地址](http://sourceforge.net/projects/pywin32/files/pywin32/Build%20219/pywin32-219.win32-py2.7.exe/download）
+[pyHook下载地址](http://nchc.dl.sourceforge.net/project/pyhook/pyhook/1.5.1/pyHook-1.5.1.win32-py2.7.exe)
+</code></pre>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 dcivan@qq.com </span>
     </div>
@@ -344,12 +345,12 @@ $ npm install</code></pre>
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>Hexo命令</p>
+    <p><span class="copy-title">文章标题:</span>Python</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="Dcivan">Dcivan</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-10-16, 17:30:16</p>
-    <p><span class="copy-title">最后更新:</span>2019-10-16, 17:30:16</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/16/Hexo命令/" title="Hexo命令">http://yoursite.com/2019/10/16/Hexo命令/</a>
+    <p><span class="copy-title">发布时间:</span>2019-10-16, 17:36:35</p>
+    <p><span class="copy-title">最后更新:</span>2019-10-17, 11:39:16</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/16/Python相关库/" title="Python">http://yoursite.com/2019/10/16/Python相关库/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
