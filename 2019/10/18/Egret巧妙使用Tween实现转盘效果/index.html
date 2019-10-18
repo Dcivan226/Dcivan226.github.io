@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>Git命令错误提示解决 | 倾周梦柳</title>
-  <meta name="keywords" content=" Git ">
-  <meta name="description" content="Git命令错误提示解决 | 倾周梦柳">
+  <title>Egret巧妙使用Tween实现转盘效果 | 倾周梦柳</title>
+  <meta name="keywords" content=" Egret ">
+  <meta name="description" content="Egret巧妙使用Tween实现转盘效果 | 倾周梦柳">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="人生只要两次相遇便好 一次遇见你 一次走到底  关于倾周梦柳 是Dcivan的个人站。到目前为止已经写了篇文章 平台支持通过 Hexo 生成，部署在 GitHub Pages，主题 3-hexo 已经在github上开源">
 <meta property="og:type" content="website">
@@ -274,9 +274,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-Git命令错误提示解决" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-Egret巧妙使用Tween实现转盘效果" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Git命令错误提示解决</h1>
+        <h1 class="article-title">Egret巧妙使用Tween实现转盘效果</h1>
     
     <div class="article-meta">
         
@@ -284,21 +284,21 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="工具">工具</a>
+                <a href="javascript:" data-rel="Egret">Egret</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color4">Git</a>
+            <a href="javascript:" class="color1">Egret</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-16 17:30:16'>2019-10-16 17:30</time>
+        创建时间:<time class="date" title='更新时间: 2019-10-16 17:30:11'>2019-10-18 16:14</time>
         
     </div>
     <div class="article-meta">
@@ -320,7 +320,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#git-add出现-“in-unpopulated-submodule-‘A’-“-问题"><span class="toc-text">git add出现 “in unpopulated submodule ‘A’ “ 问题</span></a></li></ol>
+        
     
 <style>
     .left-col .switch-btn,
@@ -335,12 +335,31 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="git-add出现-“in-unpopulated-submodule-‘A’-“-问题"><a href="#git-add出现-“in-unpopulated-submodule-‘A’-“-问题" class="headerlink" title="git add出现 “in unpopulated submodule ‘A’ “ 问题"></a>git add出现 “in unpopulated submodule ‘A’ “ 问题</h3><p>出现这个问题是因为在当前目录（以下写：./）下建立了一个仓库：A ，而 ./ 下有一文件夹 命名为“A”，A/ 有之前建立的仓库，我在 ./ 下add commit push 后发现远程仓库内并没有A/的内容，于是我在 A/ 下执行 ”git add .” 提示：“in unpopulated submodule ‘A’ ”</p>
-<pre><code class="bash">删除 A/ 的.git 文件夹
-在 ./ 下输入”git rm -r –-cached A/“ //谨记：是 A/ ，意为A目录下
-在 ./ 下输入”git add A”
-git commit -m “”
-git push origin master</code></pre>
+        <p>实现转盘效果</p>
+<pre><code class="bash">    public get factor():number {
+        return 0;
+    }
+    //转盘10个一循环
+    public set factor(value:number) {
+        let temp = Math.floor(value);
+        let idx = temp % 10;
+        let len = 10;
+        //处理每次经过的表现显示光圈
+        for(var i:number = 0; i &lt; len; i++){
+            this[&#39;selectImg_&#39; + i].visible = false;
+        }
+        this[&#39;selectImg_&#39; + idx].visible = true;
+    }
+    //10个为一循环这里转动10个循环后在第八个位置停下来
+    let tempNum = 100;
+    tempNum += 8；
+    //tempNum为最终停下来的位置
+    egret.Tween.get(this)
+               .to({factor: tempNum},6000,egret.Ease.quadInOut)
+               .wait(800)
+               .call(()=&gt;{
+                       //处理转动结束后的逻辑
+                })</code></pre>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 dcivan@qq.com </span>
@@ -354,12 +373,12 @@ git push origin master</code></pre>
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>Git命令错误提示解决</p>
+    <p><span class="copy-title">文章标题:</span>Egret巧妙使用Tween实现转盘效果</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="Dcivan">Dcivan</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-10-16, 17:30:16</p>
-    <p><span class="copy-title">最后更新:</span>2019-10-16, 17:30:16</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/16/Git命令错误提示解决/" title="Git命令错误提示解决">http://yoursite.com/2019/10/16/Git命令错误提示解决/</a>
+    <p><span class="copy-title">发布时间:</span>2019-10-18, 16:14:52</p>
+    <p><span class="copy-title">最后更新:</span>2019-10-16, 17:30:11</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/18/Egret巧妙使用Tween实现转盘效果/" title="Egret巧妙使用Tween实现转盘效果">http://yoursite.com/2019/10/18/Egret巧妙使用Tween实现转盘效果/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
