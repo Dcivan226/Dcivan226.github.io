@@ -173,11 +173,11 @@
     <div class="tags-list">
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color4">Git</a>
+        <a href="javascript:" class="color2">Python</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color2">Python</a>
+        <a href="javascript:" class="color4">Git</a>
     </li>
     
     <div class="clearfix"></div>
@@ -187,11 +187,19 @@
     <nav id="title-list-nav">
         
         <a  class="工具 "
-           href="/2019/10/16/Git命令/"
-           data-tag="Git"
+           href="/2019/10/16/Markdown简单使用/"
+           data-tag=""
            data-author="" >
-            <span class="post-title" title="Git命令">Git命令</span>
+            <span class="post-title" title="Markdown简单使用">Markdown简单使用</span>
             <span class="post-date" title="2019-10-16 17:30:16">2019/10/16</span>
+        </a>
+        
+        <a  class="Python "
+           href="/2019/10/16/Python相关库/"
+           data-tag="Python"
+           data-author="" >
+            <span class="post-title" title="Python相关库">Python相关库</span>
+            <span class="post-date" title="2019-10-16 17:36:35">2019/10/16</span>
         </a>
         
         <a  class="工具 "
@@ -210,19 +218,11 @@
             <span class="post-date" title="2019-10-16 17:30:16">2019/10/16</span>
         </a>
         
-        <a  class="Python "
-           href="/2019/10/17/PyInstaller打包发布exe/"
-           data-tag="Python"
-           data-author="" >
-            <span class="post-title" title="PyInstaller打包发布exe">PyInstaller打包发布exe</span>
-            <span class="post-date" title="2019-10-17 11:51:43">2019/10/17</span>
-        </a>
-        
         <a  class="工具 "
-           href="/2019/10/16/Markdown简单使用/"
-           data-tag=""
+           href="/2019/10/16/Git命令/"
+           data-tag="Git"
            data-author="" >
-            <span class="post-title" title="Markdown简单使用">Markdown简单使用</span>
+            <span class="post-title" title="Git命令">Git命令</span>
             <span class="post-date" title="2019-10-16 17:30:16">2019/10/16</span>
         </a>
         
@@ -235,11 +235,11 @@
         </a>
         
         <a  class="Python "
-           href="/2019/10/16/Python相关库/"
+           href="/2019/10/17/PyInstaller打包发布exe/"
            data-tag="Python"
            data-author="" >
-            <span class="post-title" title="Python相关库">Python相关库</span>
-            <span class="post-date" title="2019-10-16 17:36:35">2019/10/16</span>
+            <span class="post-title" title="PyInstaller打包发布exe">PyInstaller打包发布exe</span>
+            <span class="post-date" title="2019-10-17 11:51:43">2019/10/17</span>
         </a>
         
     </nav>
@@ -315,7 +315,8 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Windows下python库的常用安装方法"><a href="#Windows下python库的常用安装方法" class="headerlink" title="Windows下python库的常用安装方法"></a>Windows下python库的常用安装方法</h3><p>几种常用的安装方法:</p>
+        <h3 id="Windows下python库的常用安装方法"><a href="#Windows下python库的常用安装方法" class="headerlink" title="Windows下python库的常用安装方法"></a>Windows下python库的常用安装方法</h3><p><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/" target="_blank" rel="noopener">这个地址基本包含了所有的库</a></p>
+<p>几种常用的安装方法:</p>
 <ul>
 <li>pip安装（需要pip）<pre><code class="bash">  pip install xxx</code></pre>
 </li>
@@ -328,7 +329,10 @@
 2.解压 
 3.在命令提示符窗口中，使用cd进入到解压后的文件的路径下 
 4.输入命令python setup.py install 
- 常用的两个下载包和模块安装文件的网站：PyPI-the Python Package Index和Python Extension Packages。 </code></pre><h3 id="python-cv2模块"><a href="#python-cv2模块" class="headerlink" title="python cv2模块"></a>python cv2模块</h3><pre><code class="bash">    pip3 install opencv-python</code></pre>
+ 常用的两个下载包和模块安装文件的网站：PyPI-the Python Package Index和Python Extension Packages。 </code></pre><h3 id="python-cv2模块"><a href="#python-cv2模块" class="headerlink" title="python cv2模块"></a>python cv2模块</h3><p><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#opencv" target="_blank" rel="noopener">地址下载对应版本的opencv — opencv_python‑4.1.2‑cp37‑cp37m‑win_amd64.whl</a></p>
+<pre><code class="bash">    pip3 install opencv-python
+    或者
+    pip install opencv_python‑4.1.2‑cp37‑cp37m‑win_amd64.whl</code></pre>
 <h3 id="python-numpy模块"><a href="#python-numpy模块" class="headerlink" title="python numpy模块"></a>python numpy模块</h3><p><a href="https://pypi.org/project/numpy/" target="_blank" rel="noopener">numpy下载地址</a>下载numpy-1.11.3-cp35-none-win_amd64.whl,将这个下载文件放到&lt;Python安装目录&gt;\Scripts\ 目录下，numpy和python是有对应关系的，并不是随便一款numpy都可以基于随便一款Python的</p>
 <pre><code class="bash">    pip3.5 install E:\AndroidDev\Python3_5\Scripts\numpy-1.11.3-cp35-none-win_amd64.whl</code></pre>
 <h3 id="python-PIL模块"><a href="#python-PIL模块" class="headerlink" title="python PIL模块"></a>python PIL模块</h3><pre><code class="bash">    pip3 install Pillow</code></pre>
@@ -444,7 +448,7 @@ PyHook是一个基于Python的“钩子”库，主要用于监听当前电脑�
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#Git','#Python',],
+            'data': ['#Python','#Git',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');
