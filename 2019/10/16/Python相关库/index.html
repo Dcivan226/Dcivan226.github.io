@@ -115,7 +115,7 @@
     
         
             
-            <li><div data-rel="工具">工具<small>(3)</small></div>
+            <li><div data-rel="Python">Python<small>(3)</small></div>
                 
             </li>
             
@@ -123,7 +123,7 @@
     
         
             
-            <li><div data-rel="Python">Python<small>(3)</small></div>
+            <li><div data-rel="工具">工具<small>(3)</small></div>
                 
             </li>
             
@@ -186,14 +186,6 @@
     
     <nav id="title-list-nav">
         
-        <a  class="工具 "
-           href="/2019/10/16/Markdown简单使用/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="Markdown简单使用">Markdown简单使用</span>
-            <span class="post-date" title="2019-10-16 17:30:16">2019/10/16</span>
-        </a>
-        
         <a  class="Python "
            href="/2019/10/16/Python相关库/"
            data-tag="Python"
@@ -210,6 +202,14 @@
             <span class="post-date" title="2019-10-16 17:30:16">2019/10/16</span>
         </a>
         
+        <a  class="工具 "
+           href="/2019/10/16/Git命令/"
+           data-tag="Git"
+           data-author="" >
+            <span class="post-title" title="Git命令">Git命令</span>
+            <span class="post-date" title="2019-10-16 17:30:16">2019/10/16</span>
+        </a>
+        
         <a  class=""
            href="/2019/10/16/Hexo命令/"
            data-tag=""
@@ -219,19 +219,11 @@
         </a>
         
         <a  class="工具 "
-           href="/2019/10/16/Git命令/"
-           data-tag="Git"
+           href="/2019/10/16/Markdown简单使用/"
+           data-tag=""
            data-author="" >
-            <span class="post-title" title="Git命令">Git命令</span>
+            <span class="post-title" title="Markdown简单使用">Markdown简单使用</span>
             <span class="post-date" title="2019-10-16 17:30:16">2019/10/16</span>
-        </a>
-        
-        <a  class="Python "
-           href="/2019/10/16/Python安装/"
-           data-tag="Python"
-           data-author="" >
-            <span class="post-title" title="Python安装">Python安装</span>
-            <span class="post-date" title="2019-10-16 17:36:37">2019/10/16</span>
         </a>
         
         <a  class="Python "
@@ -240,6 +232,14 @@
            data-author="" >
             <span class="post-title" title="PyInstaller打包发布exe">PyInstaller打包发布exe</span>
             <span class="post-date" title="2019-10-17 11:51:43">2019/10/17</span>
+        </a>
+        
+        <a  class="Python "
+           href="/2019/10/16/Python安装/"
+           data-tag="Python"
+           data-author="" >
+            <span class="post-title" title="Python安装">Python安装</span>
+            <span class="post-date" title="2019-10-16 17:36:37">2019/10/16</span>
         </a>
         
     </nav>
@@ -300,7 +300,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows下python库的常用安装方法"><span class="toc-text">Windows下python库的常用安装方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#python-cv2模块"><span class="toc-text">python cv2模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#python-numpy模块"><span class="toc-text">python numpy模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#python-PIL模块"><span class="toc-text">python PIL模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#python-tkinter"><span class="toc-text">python tkinter</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#python2-7-16"><span class="toc-text">python2.7.16</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pip"><span class="toc-text">pip</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pytesseract"><span class="toc-text">Pytesseract</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows下python库的常用安装方法"><span class="toc-text">Windows下python库的常用安装方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#python-cv2模块"><span class="toc-text">python cv2模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#python-numpy模块"><span class="toc-text">python numpy模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#python-PIL模块"><span class="toc-text">python PIL模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PyAutoGUI的安装"><span class="toc-text">PyAutoGUI的安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#python-tkinter"><span class="toc-text">python tkinter</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#python2-7-16"><span class="toc-text">python2.7.16</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pip"><span class="toc-text">pip</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pytesseract"><span class="toc-text">Pytesseract</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -332,10 +332,13 @@
  常用的两个下载包和模块安装文件的网站：PyPI-the Python Package Index和Python Extension Packages。 </code></pre><h3 id="python-cv2模块"><a href="#python-cv2模块" class="headerlink" title="python cv2模块"></a>python cv2模块</h3><p><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#opencv" target="_blank" rel="noopener">地址下载对应版本的opencv — opencv_python‑4.1.2‑cp37‑cp37m‑win_amd64.whl</a></p>
 <pre><code class="bash">    pip3 install opencv-python
     或者
-    pip install opencv_python‑4.1.2‑cp37‑cp37m‑win_amd64.whl</code></pre>
+    pip3 install opencv_python‑4.1.2‑cp37‑cp37m‑win_amd64.whl
+    注意看提示是否升级pip
+    python -m pip install --upgrade pip</code></pre>
 <h3 id="python-numpy模块"><a href="#python-numpy模块" class="headerlink" title="python numpy模块"></a>python numpy模块</h3><p><a href="https://pypi.org/project/numpy/" target="_blank" rel="noopener">numpy下载地址</a>下载numpy-1.11.3-cp35-none-win_amd64.whl,将这个下载文件放到&lt;Python安装目录&gt;\Scripts\ 目录下，numpy和python是有对应关系的，并不是随便一款numpy都可以基于随便一款Python的</p>
 <pre><code class="bash">    pip3.5 install E:\AndroidDev\Python3_5\Scripts\numpy-1.11.3-cp35-none-win_amd64.whl</code></pre>
 <h3 id="python-PIL模块"><a href="#python-PIL模块" class="headerlink" title="python PIL模块"></a>python PIL模块</h3><pre><code class="bash">    pip3 install Pillow</code></pre>
+<h3 id="PyAutoGUI的安装"><a href="#PyAutoGUI的安装" class="headerlink" title="PyAutoGUI的安装"></a>PyAutoGUI的安装</h3><pre><code class="bash">    pip3 install pyautogui</code></pre>
 <h3 id="python-tkinter"><a href="#python-tkinter" class="headerlink" title="python tkinter"></a>python tkinter</h3><p>python3安装tkinter：  自带的，python27导入方式：import Tkinter as tk<br>tkinter是python 默认库无需安装，导入失败是包的名称写错了，可能叫Tkinter,或者tkinter多试一试。</p>
 <h3 id="python2-7-16"><a href="#python2-7-16" class="headerlink" title="python2.7.16"></a>python2.7.16</h3><p>[python2下载地址](<a href="https://www.python.org/downloads/windows/）" target="_blank" rel="noopener">https://www.python.org/downloads/windows/）</a></p>
 <h3 id="pip"><a href="#pip" class="headerlink" title="pip"></a>pip</h3><p>[pip 下载地址](<a href="https://pypi.org/project/pip/）" target="_blank" rel="noopener">https://pypi.org/project/pip/）</a></p>
