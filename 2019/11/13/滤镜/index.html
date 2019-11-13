@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>倾周梦柳</title>
-  <meta name="keywords" content>
-  <meta name="description" content="倾周梦柳">
+  <title>Egret巧妙使用Tween实现转盘效果 | 倾周梦柳</title>
+  <meta name="keywords" content=" Egret , -滤镜 ">
+  <meta name="description" content="Egret巧妙使用Tween实现转盘效果 | 倾周梦柳">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="人生只要两次相遇便好 一次遇见你 一次走到底  关于倾周梦柳 是Dcivan的个人站。到目前为止已经写了篇文章 平台支持通过 Hexo 生成，部署在 GitHub Pages，主题 3-hexo 已经在github上开源">
 <meta property="og:type" content="website">
@@ -294,17 +294,33 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+        <article id="post-滤镜" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">Egret巧妙使用Tween实现转盘效果</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            
+                <a href="javascript:" data-rel="Shader">Shader</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color1">Egret</a>
+            
+            <a href="javascript:" class="color4">-滤镜</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-16 17:30:16'>2019-10-17 11:51</time>
+        创建时间:<time class="date" title='更新时间: 2019-11-13 15:50:17'>2019-11-13 15:44</time>
         
     </div>
     <div class="article-meta">
@@ -326,7 +342,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#关于"><span class="toc-text">关于</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#平台支持"><span class="toc-text">平台支持</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#颜色矩阵原理解析"><span class="toc-text">颜色矩阵原理解析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#矩阵的运算规则"><span class="toc-text">矩阵的运算规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实际的颜色值由下面的公式决定："><span class="toc-text">实际的颜色值由下面的公式决定：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模糊滤镜"><span class="toc-text">模糊滤镜</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -341,13 +357,61 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<center>人生只要两次相遇便好</center>
-<center>一次遇见你</center>
-<center>一次走到底</center>
-</blockquote>
-<h2 id="关于"><a href="#关于" class="headerlink" title="关于"></a>关于</h2><p><strong>倾周梦柳</strong> 是Dcivan的个人站。<br><img src="/img/weixin.jpg" alt><br>到目前为止已经写了<code class="article_number"></code>篇文章</p>
-<h2 id="平台支持"><a href="#平台支持" class="headerlink" title="平台支持"></a>平台支持</h2><p>通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源</p>
+        <h3 id="颜色矩阵原理解析"><a href="#颜色矩阵原理解析" class="headerlink" title="颜色矩阵原理解析"></a>颜色矩阵原理解析</h3><p>颜色矩阵是一个5x4 的矩阵，可以用来方面的修改图片中RGBA各分量的值，颜色矩阵以一维数组的方式存储如下：</p>
+<pre><code class="bash">[ a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t ]</code></pre>
+<p>他通过RGBA四个通道来直接操作对应颜色，如果会使用Photoshop就会知道有时处理图片通过控制RGBA各颜色通道来做出特殊的效果</p>
+<h3 id="矩阵的运算规则"><a href="#矩阵的运算规则" class="headerlink" title="矩阵的运算规则"></a>矩阵的运算规则</h3><pre><code class="bash">R&#39; = a*R + b*G + c*B + d*A + e;
+G&#39; = f*R + g*G + h*B + i*A + j;
+B&#39; = k*R + l*G + m*B + n*A + o;
+A&#39; = p*R + q*G + r*B + s*A + t;</code></pre>
+<h3 id="实际的颜色值由下面的公式决定："><a href="#实际的颜色值由下面的公式决定：" class="headerlink" title="实际的颜色值由下面的公式决定："></a>实际的颜色值由下面的公式决定：</h3><pre><code class="bash">redResult   = (a[0] * srcR)  + (a[1] * srcG)  + (a[2] * srcB)  + (a[3] * srcA)  + a[4];
+greenResult = (a[5] * srcR)  + (a[6] * srcG)  + (a[7] * srcB)  + (a[8] * srcA)  + a[9];
+blueResult  = (a[10] * srcR) + (a[11] * srcG) + (a[12] * srcB) + (a[13] * srcA) + a[14];
+alphaResult = (a[15] * srcR) + (a[16] * srcG) + (a[17] * srcB) + (a[18] * srcA) + a[19];</code></pre>
+<p>公式中 srcR、srcG、srcB、srcA 表示原始显示对象的像素值, a 即我们设置的颜色矩阵的数组。我们得到的红绿蓝和alpha通道实际由颜色矩阵和原始图片的像素值同时决定。颜色矩阵中的 Off 可以直接设置偏移量加上相应的 R G B A 的值的乘积即为最终的颜色值。所以与原来完全相同的矩阵转换应该是下面这样的：</p>
+<pre><code class="bash">var a = [
+    1,0,0,0,0,
+    0,1,0,0,0,
+    0,0,1,0,0,
+    0,0,0,1,0
+];</code></pre>
+<p>设置红色偏移量<br>在颜色矩阵中直接设置每一行中最后一个值即可设置偏移量，我们直接设置一下红色通道的偏移量，结果整张图片将变红。</p>
+<pre><code class="bash">var colorMatrix = [
+    1,0,0,0,100,
+    0,1,0,0,0,
+    0,0,1,0,0,
+    0,0,0,1,0
+];</code></pre>
+<p>需要注意的 R G B 通道对应的偏移量的值应该为 -255 ~ 255，Alpha 通道对应的偏移量取值范围为 0 ~ 1.应避免传入除数字外其他类型的值，比如字符串等。</p>
+<p>绿色加倍<br>如果想使绿色通道加倍,colorMatrix[6] 加倍即可：</p>
+<pre><code class="bash">var colorMatrix = [
+    1,0,0,0,0,
+    0,2,0,0,0,
+    0,0,1,0,0,
+    0,0,0,1,0
+];</code></pre>
+<p>红色决定蓝色值<br>如果你要使结果图像中的蓝色与原图的红色数量相等，将colorMatrix[10]设为1， colorMatrix[12]设为0 ,即结果的蓝色值完全由原始的红色值决定：</p>
+<pre><code class="bash">var colorMatrix = [
+    1,0,0,0,0,
+    0,1,0,0,0,
+    1,0,0,0,0,
+    0,0,0,1,0
+];</code></pre>
+<p>增加亮度<br>增加亮度的最简单途径是给每个颜色值添加相同的偏移量。</p>
+<pre><code class="bash">var colorMatrix = [
+    1,0,0,0,100,
+    0,1,0,0,100,
+    0,0,1,0,100,
+    0,0,0,1,0
+];</code></pre>
+<h3 id="模糊滤镜"><a href="#模糊滤镜" class="headerlink" title="模糊滤镜"></a>模糊滤镜</h3><p>在 Egret 中使用模糊滤镜也比较简单，通过 BlurFilter 类来设置模糊滤镜。</p>
+<pre><code class="bash">var hero:egret.Bitmap = new egret.Bitmap();
+hero.texture = RES.getRes(&quot;hero_png&quot;);
+this.addChild(hero);
+
+var blurFliter = new egret.BlurFilter( 1 , 1);
+hero.filters = [blurFliter];</code></pre>
+<p>和颜色转换矩阵类似，实例化一个 BlurFilter 并将其保存到显示对象的 filters 属性中即可。其中示例化 BlurFilter 有两个参数，即为 x 、y 方向的模糊度。<br>值越大效果越模糊。</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 dcivan@qq.com </span>
@@ -359,6 +423,18 @@
     <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
 </p>
 
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>Egret巧妙使用Tween实现转盘效果</p>
+    
+    <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="Dcivan">Dcivan</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-11-13, 15:44:49</p>
+    <p><span class="copy-title">最后更新:</span>2019-11-13, 15:50:17</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/11/13/滤镜/" title="Egret巧妙使用Tween实现转盘效果">http://yoursite.com/2019/11/13/滤镜/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
 
 
 
